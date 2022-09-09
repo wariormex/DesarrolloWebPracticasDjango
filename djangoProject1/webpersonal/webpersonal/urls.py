@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from tomlkit import document
 from core import views
+from project import views as views_project
 from . import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('contact/', views.contact, name='contact'),
+    path('project/', views_project.project, name='project'),
 ]
 
 if settings.DEBUG:
